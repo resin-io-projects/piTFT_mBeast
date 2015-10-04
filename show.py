@@ -58,35 +58,44 @@ class pitft :
 
 def main():
 
-    # font colours
-    colourWhite = (255, 255, 255)
-    colourBlack = (0, 0, 0)
-    colourGreen = (3, 192, 60)
-    colourRed = (220, 69, 69)
 
-    # Create an instance of the pitft class
-    mytft = pitft()
+    if os.path.exists("/dev/fb0") :
+        print "It has a screen"
 
-    #hide the mouse from screen
-    pygame.mouse.set_visible(False)
+        # font colours
+        colourWhite = (255, 255, 255)
+        colourBlack = (0, 0, 0)
+        colourGreen = (3, 192, 60)
+        colourRed = (220, 69, 69)
 
-    # set up the fonts
-    # choose the font
-    fontpath = pygame.font.match_font('dejavusansmono')
-    font = pygame.font.Font(fontpath, 10)
+        # Create an instance of the pitft class
+        mytft = pitft()
 
-    #read the ENV VAR, use GE if 'STOCK' isn't there
-    #companyName = os.getenv('STOCK', "GE")
-    #print 'company name: '+companyName
+        #hide the mouse from screen
+        pygame.mouse.set_visible(False)
 
-    #The default MARKET is NASDAQ
-    #marketName = os.getenv('MARKET', "NASDAQ")
-    #print 'market name: '+marketName
+        # set up the fonts
+        # choose the font
+        fontpath = pygame.font.match_font('dejavusansmono')
+        font = pygame.font.Font(fontpath, 10)
 
-    logo = pygame.image.load( "/usr/src/app/image.jpg")
-    mytft.screen.blit(logo, (0, 0))
+        #read the ENV VAR, use GE if 'STOCK' isn't there
+        #companyName = os.getenv('STOCK', "GE")
+        #print 'company name: '+companyName
 
-    pygame.display.update()
+        #The default MARKET is NASDAQ
+        #marketName = os.getenv('MARKET', "NASDAQ")
+        #print 'market name: '+marketName
+
+        logo = pygame.image.load( "/usr/src/app/image.jpg")
+        mytft.screen.blit(logo, (0, 0))
+
+        pygame.display.update()
+
+    else :
+        print "It hasnt a screen"
+
+        
 
     while True:
 
