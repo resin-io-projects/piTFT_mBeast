@@ -6,6 +6,8 @@ import json
 from signal import alarm, signal, SIGALRM
 import io
 from threading import Timer
+import pickle
+
 
 #set up the screen so we can push stuff onto it.
 class pitft :
@@ -95,7 +97,9 @@ def main():
     else :
         print "It hasnt a screen"
 
-        
+    updates = pickle.load(open( "up.p", "rb" ) )
+    print "how many updates? ", updates
+
 
     while True:
 
