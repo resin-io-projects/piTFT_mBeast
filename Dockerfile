@@ -1,0 +1,10 @@
+FROM resin/raspberrypi-python
+
+RUN apt-get update && apt-get install -y python-pygame git dropbear
+
+ENV INITSYSTEM on
+
+COPY . /usr/src/app
+WORKDIR /usr/src/app
+
+CMD ["bash", "/usr/src/app/start.sh"]
