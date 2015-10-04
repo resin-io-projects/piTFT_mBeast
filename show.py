@@ -97,7 +97,7 @@ def main():
     else :
         print "It hasnt a screen"
 
-    updates = pickle.load(open( "/usr/src/app/up.p", "rb" ) )
+    updates = pickle.load(open( "/usr/src/app/save.p", "rb" ) )
     print "how many updates? ", updates
 
 
