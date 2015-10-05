@@ -21,12 +21,13 @@ if device == 'raspberrypi':
     pygame.mouse.set_visible(False)
     display = pygame.display.set_mode((240, 320))
 
-    font = pygame.font.Font(None, 50)
+    font_big = pygame.font.Font(None, 100)
+    font_small = pygame.font.Font(None, 40)
 
-    surface = font.render('#%d' % updates, True, WHITE)
-    display.blit(surface, surface.get_rect(center=(120, 200)))
+    surface = font_big.render('#%d' % updates, True, WHITE)
+    display.blit(surface, surface.get_rect(center=(120, 220)))
 
-    surface = font.render('Welcome to ELCE', True, WHITE)
+    surface = font_small.render('Welcome to ELCE', True, WHITE)
     display.blit(surface, surface.get_rect(center=(120, 280)))
 
     image = pygame.image.load('/usr/src/app/image.jpg')
