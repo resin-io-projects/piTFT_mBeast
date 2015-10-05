@@ -12,6 +12,12 @@ print 'Welcome to ELCE'
 
 if device == 'raspberrypi':
     import pygame
+    import signal
+
+    def handler():
+        raise KeyboardInterrupt
+
+    signal.signal(signal.SIGALRM, handler)
 
     WHITE = (255,255,255)
 
@@ -19,6 +25,7 @@ if device == 'raspberrypi':
 
     pygame.init()
     pygame.mouse.set_visible(False)
+    signal.alarm(1)
     display = pygame.display.set_mode((240, 320))
 
     font_big = pygame.font.Font(None, 100)
