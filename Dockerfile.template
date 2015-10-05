@@ -5,8 +5,6 @@ RUN apt-get update \
 		python-pygame \
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV INITSYSTEM on
-
 ENV DEVICE %%RESIN_MACHINE_NAME%% 
 
 COPY . /usr/src/app

@@ -1,4 +1,5 @@
 import os
+import time
 
 device = os.getenv('DEVICE', 'unknown device')
 
@@ -32,3 +33,6 @@ if device == 'raspberrypi':
     display.blit(image, (0, 0))
 
     pygame.display.update()
+
+# Sleep for a year
+time.sleep(60 * 60 * 24 * 365)
