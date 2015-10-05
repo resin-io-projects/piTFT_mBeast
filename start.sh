@@ -1,5 +1,10 @@
 #!/bin/bash
 
+mount -t devtmpfs none /dev
+
+udevd & 
+udevadm trigger &> /dev/null
+
 if [ ! -c /dev/fb1 ]; then
   echo "loading piTFT kernel module"
   modprobe spi-bcm2708
