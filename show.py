@@ -21,7 +21,7 @@ if device == 'raspberrypi':
     pygame.mouse.set_visible(False)
     display = pygame.display.set_mode((240, 320))
 
-    font = pygame.font.Font(None, 20)
+    font = pygame.font.Font(None, 50)
 
     surface = font.render('#%d' % updates, True, WHITE)
     display.blit(surface, surface.get_rect(center=(120, 200)))
