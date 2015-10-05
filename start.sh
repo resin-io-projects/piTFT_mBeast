@@ -27,5 +27,7 @@ export PASSWD=${PASSWD:=root}
 #Set the root password
 echo "root:$PASSWD" | chpasswd
 
+echo "type:$DEVICE"
+
 echo "starting python script"
 python /usr/src/app/show.py

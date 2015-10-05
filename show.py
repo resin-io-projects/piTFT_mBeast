@@ -60,8 +60,10 @@ class pitft :
 
 def main():
 
+    device = os.getenv('DEVICE')
+    print device
 
-    if os.path.exists("/dev/fb0") :
+    if device == "raspberrypi" :
         print "It has a screen"
 
         # font colours
