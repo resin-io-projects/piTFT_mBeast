@@ -4,6 +4,8 @@ RUN apt-get update && apt-get install -y python-pygame git dropbear
 
 ENV INITSYSTEM on
 
+ENV DEVICE %%RESIN_MACHINE_NAME%% 
+
 COPY . /usr/src/app
 WORKDIR /usr/src/app
 
