@@ -38,7 +38,7 @@ if device == 'raspberrypi':
     display.blit(surface, surface.get_rect(center=(120, 280)))
 
     image = pygame.image.load('/usr/src/app/image.jpg')
-    display.blit(image, (0, 0))
+    display.blit(pygame.transform.smoothscale(image, (240, 160)), (0, 0))
 
     pygame.display.update()
 
