@@ -34,7 +34,7 @@ if device == 'raspberrypi':
     surface = font_big.render('#%d' % updates, True, WHITE)
     display.blit(surface, surface.get_rect(center=(120, 220)))
 
-    surface = font_small.render('Welcome to ELCE', True, WHITE)
+    surface = font_small.render('Welcome to DockerCon', True, WHITE)
     display.blit(surface, surface.get_rect(center=(120, 280)))
 
     image = pygame.image.load('/usr/src/app/image.jpg')
